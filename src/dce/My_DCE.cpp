@@ -39,8 +39,8 @@ struct My_DCE : public FunctionPass {
 			 dead.push_back(&*I);
 		}
 
-        errs() << "Dead:\n";
 	    while (!dead.empty()) {
+        errs() << "Dead:";
         Instruction *I = dead.front();
         errs() << *I << "\n";
 
@@ -49,8 +49,8 @@ struct My_DCE : public FunctionPass {
             change = true;
         }
 
-        return change;
     }
+    return change;
   }
 }; // end of struct Hello
 }  // end of anonymous namespace
